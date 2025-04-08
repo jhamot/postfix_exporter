@@ -17,7 +17,7 @@ ENV GO111MODULE=on
 RUN go test
 RUN go build -o /bin/postfix_exporter
 
-FROM debian:latest
+FROM debian:12.10
 EXPOSE 9154
 WORKDIR /
 COPY --from=builder /bin/postfix_exporter /bin/
